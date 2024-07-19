@@ -25,4 +25,4 @@ PhiCrypto is a web application designed to decode and encode save files for the 
 - **Discord Channel**: [Join Here](https://discord.gg/phigros-and-rhythm-gaming-1039084623260569631)
 
 ## Thank
-[PhigrosLibrary](PhigrosLibrary) by @7aGiven
+[PhigrosLibrary](https://github.com/7aGiven/PhigrosLibrary) by @7aGiven
