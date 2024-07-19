@@ -14,7 +14,11 @@ PhiCrypto is a web application designed to decode and encode save files for the 
     ```bash
     node .
     ```
-
+5. **Open the web**
+   ```
+   http://<ip>:8080/
+   ```
+   The default password is `luobo233`,you can change it on index.js
 ## Contact
 
 - **QQ Group**: 736770364
