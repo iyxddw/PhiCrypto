@@ -1,6 +1,6 @@
 # PhiCrypto
 
-PhiCrypto is a web application designed to decode and encode save files for the game Phigros, developed using JavaScript. To ensure security, the key and IV have been removed.
+PhiCrypto is a web application designed to decode and encode save files for the game Phigros, developed using JavaScript. To avoid abuse, the key and IV have been removed.
 ![example](example.png)
 ## How to Use
 
