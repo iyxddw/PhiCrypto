@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhiCrypto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+    <div class="header">
+        <h1>Phi-Decoder</h1>
+    </div>
+    <div class="container">
+        <div class="box">
+            <label for="ciphertext">密文</label>
+            <textarea id="ciphertext" placeholder="在此输入密文"></textarea>
+        </div>
+        <div class="buttons">
+            <button id="encrypt">加密</button>
+            <button id="decrypt">解密</button>
+            <button id="clear" onclick="clean();">清空</button>
+        </div>
+        <div class="box">
+            <label for="plaintext">明文</label>
+            <textarea id="plaintext" placeholder="在此输入明文"></textarea>
+        </div>
+        <div class="box box2">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <label for="file">点我上传文件</label>
+                <input type="file" name="file" id="file" required>
+                <button type="submit">开始处理</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <footer class="footer"> 
+        <small>luobo233 made with love</small>
+    </footer>
+</body>
+</html>
