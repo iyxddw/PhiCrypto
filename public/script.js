@@ -132,3 +132,36 @@ function clean() {
     document.getElementById('plaintext').value = '';
     document.getElementById('ciphertext').value = '';
 };
+async function copy(cipherorplain) {
+    let textToCopy = '';
+    if(cipherorplain =='c'){
+        const ciphertext = document.getElementById('ciphertext');
+        textToCopy = ciphertext.value;
+    }else if(cipherorplain =='p'){
+        const plaintext = document.getElementById('plaintext');
+        textToCopy = plaintext.value;
+    }
+
+    if (navigator.clipboard) {
+        //Clipboard API
+        try {
+            await navigator.clipboard.writeText(textToCopy);
+        } catch (err) {
+            alert('Failed to copy text: ', err);
+        }
+    } else if (document.execCommand) {
+        //document.execCommand('copy')
+        const textarea = document.createElement('textarea');
+        textarea.value = textToCopy;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+        } catch (err) {
+            alert('Failed to copy text: ', err);
+        }
+        document.body.removeChild(textarea);
+    } else {
+        alert('Copy not supported on this browser');
+    }
+}
