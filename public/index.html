@@ -10,10 +10,11 @@
 <body>
     <div class="header">
         <h1>PhiCrypto</h1>
+        <h5 style="opacity: 0.6;">This site is used to decrypt Phigros archive files, the uploaded file can automatically identify whether it is an encrypted archive, and the uploaded file should be an xml archive file</h5>
     </div>
     <div class="container">
         <div class="box">
-            <label for="ciphertext">Ciphertext</label>
+            <label for="ciphertext" onclick="copy('c');">Ciphertext</label>
             <textarea id="ciphertext" placeholder="Enter ciphertext here"></textarea>
         </div>
         <div class="buttons">
@@ -22,7 +23,7 @@
             <button id="clear" onclick="clean();">Clear</button>
         </div>
         <div class="box">
-            <label for="plaintext">Plaintext</label>
+            <label for="plaintext" onclick="copy('p');">Plaintext</label>
             <textarea id="plaintext" placeholder="Enter plaintext here"></textarea>
         </div>
         <div class="box box2">
