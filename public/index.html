@@ -3,41 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhiCrypto</title>
+    <title>PhiCrypto - Phigros Save File Encryption Tool</title>
+    <meta name="description" content="Encrypt and decrypt Phigros game save files securely">
+    <meta name="keywords" content="phigros, encryption, save file, gaming">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="header">
         <h1>PhiCrypto</h1>
-        <h5 style="opacity: 0.6;">This site is used to decrypt Phigros archive files, the uploaded file can automatically identify whether it is an encrypted archive, and the uploaded file should be an xml archive file</h5>
-        <h5 style="opacity: 0.6;">Click the Textaera title to copy</h5>
+        <h5>Secure encryption and decryption tool for Phigros save files</h5>
+        <h5>Click on any text area title to copy its contents to clipboard</h5>
     </div>
+    
     <div class="container">
-        <div class="box">
-            <label for="ciphertext" onclick="copy('c');">Ciphertext</label>
-            <textarea id="ciphertext" placeholder="Enter ciphertext here"></textarea>
+        <div class="box" id="ciphertext-box">
+            <label for="ciphertext" onclick="copyText('ciphertext');" title="Click to copy">
+                🔒 Encrypted Data
+            </label>
+            <textarea 
+                id="ciphertext" 
+                placeholder="Enter encrypted data here or upload a file to process..."
+                spellcheck="false"
+            ></textarea>
         </div>
+        
         <div class="buttons">
-            <button id="encrypt">Encrypt</button>
-            <button id="decrypt">Decrypt</button>
-            <button id="clear" onclick="clean();">Clear</button>
+            <button id="encrypt" title="Encrypt the plaintext">
+                🔐 Encrypt
+            </button>
+            <button id="decrypt" title="Decrypt the ciphertext">
+                🔓 Decrypt
+            </button>
+            <button id="clear" onclick="clearAll();" title="Clear all text areas">
+                🗑️ Clear
+            </button>
+            <button id="logout" onclick="logout();" title="Logout and return to password screen">
+                🚪 Logout
+            </button>
         </div>
-        <div class="box">
-            <label for="plaintext" onclick="copy('p');">Plaintext</label>
-            <textarea id="plaintext" placeholder="Enter plaintext here"></textarea>
+        
+        <div class="box" id="plaintext-box">
+            <label for="plaintext" onclick="copyText('plaintext');" title="Click to copy">
+                📄 Decrypted Data
+            </label>
+            <textarea 
+                id="plaintext" 
+                placeholder="Enter plaintext here or view decrypted results..."
+                spellcheck="false"
+            ></textarea>
         </div>
+        
         <div class="box box2">
             <form id="uploadForm" enctype="multipart/form-data">
-                <label for="file">Click to upload file</label>
-                <input type="file" name="file" id="file" required>
-                <button type="submit">Processing</button>
+                <label for="file" title="Upload Phigros save file">
+                    📁 Click to upload Phigros save file
+                    <br><small>Supports XML format files</small>
+                </label>
+                <input type="file" name="file" id="file" accept=".xml,.txt" required>
+                <button type="submit" id="process-btn">
+                    ⚡ Process File
+                </button>
             </form>
         </div>
     </div>
+    
+    <!-- Toast notifications -->
+    <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
+    
     <script src="script.js"></script>
+    
     <footer class="footer"> 
-        <small>luobo233 made with love</small>
+        <small>Made with ❤️ by luobo233 | 
+            <a href="https://github.com/7aGiven/PhigrosLibrary" target="_blank" rel="noopener">
+                Thanks to PhigrosLibrary
+            </a>
+        </small>
     </footer>
 </body>
 </html>
